@@ -1,0 +1,96 @@
+/* =====================================================
+   Auth Pages - Split layout dengan panel visual interaktif
+   (dipakai khusus di login.php & register.php, tanpa navbar)
+   ===================================================== */
+
+.auth-split {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ---------------- Panel kiri: visual interaktif ---------------- */
+.auth-visual {
+    position: relative;
+    flex: 1.1;
+    min-width: 0;
+    background: linear-gradient(160deg, var(--navy) 0%, #16233F 55%, var(--navy-light) 100%);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 48px;
+}
+
+.auth-logo {
+    position: absolute;
+    top: 32px;
+    left: 40px;
+    z-index: 3;
+    color: #fff;
+    font-weight: 700;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.auth-visual-text {
+    position: relative;
+    z-index: 3;
+    max-width: 420px;
+    color: #fff;
+}
+.auth-visual-text h2 {
+    font-size: 30px;
+    line-height: 1.3;
+    margin: 0 0 14px;
+}
+.auth-visual-text p {
+    font-size: 15px;
+    color: #B9C4DA;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.auth-back {
+    position: absolute;
+    bottom: 32px;
+    left: 40px;
+    z-index: 3;
+    font-size: 13px;
+    color: #9FADC7;
+    transition: color .15s;
+}
+.auth-back:hover { color: #fff; }
+
+/* ---------------- Panel kanan: form ---------------- */
+.auth-form-panel {
+    flex: 1;
+    min-width: 0;
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+}
+.auth-form-panel .auth-box {
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
+}
+
+@media (max-width: 900px) {
+    .auth-split { flex-direction: column; }
+    .auth-visual {
+        flex: none;
+        min-height: 180px;
+        padding: 24px;
+        justify-content: flex-end;
+    }
+    .auth-visual-text p { display: none; }
+    .auth-visual-text h2 { font-size: 19px; margin-bottom: 0; }
+    .auth-back { display: none; }
+    .float-wrap.extra { display: none; }
+    .float-icon { width: 44px; height: 44px; font-size: 20px; }
+    .auth-form-panel { padding: 32px 20px; }
+}

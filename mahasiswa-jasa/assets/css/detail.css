@@ -1,0 +1,177 @@
+/* =====================================================
+   Service Detail
+   ===================================================== */
+
+.detail-wrap { padding: 28px 0 48px; }
+
+.breadcrumb {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 18px;
+}
+.breadcrumb a:hover { color: var(--blue); }
+
+.detail-top {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 32px;
+    margin-bottom: 32px;
+}
+
+/* ---------- Galeri ---------- */
+.gallery-main {
+    height: 340px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--navy), var(--navy-light));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    box-shadow: var(--shadow);
+}
+.gallery-main img { width: 100%; height: 100%; object-fit: cover; }
+
+.gallery-thumbs {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+.gallery-thumbs button {
+    width: 72px;
+    height: 56px;
+    padding: 0;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--border);
+}
+.gallery-thumbs button.active { border-color: var(--blue); }
+.gallery-thumbs img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- Info utama ---------- */
+.detail-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+}
+.detail-head h1 { font-size: 26px; margin: 0 0 6px; }
+.detail-price {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--blue);
+    white-space: nowrap;
+}
+.detail-cat {
+    display: inline-block;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+.detail-rating { font-size: 14px; margin-bottom: 16px; }
+
+.detail-facts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 22px;
+    font-size: 14px;
+}
+.detail-facts li { display: flex; gap: 10px; align-items: center; }
+
+.detail-actions { display: flex; gap: 12px; }
+.detail-actions .btn { flex: 1; padding: 14px 20px; }
+.btn-outline-blue {
+    background: #EFF6FF;
+    color: var(--blue);
+    border: 1px solid #BFDBFE;
+}
+.btn-outline-blue:hover { background: #DBEAFE; }
+
+.own-note {
+    background: var(--warning-bg);
+    color: var(--warning-text);
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* ---------- Bagian bawah ---------- */
+.detail-bottom {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 32px;
+    align-items: start;
+}
+.detail-section { margin-bottom: 32px; }
+.detail-section h2 { font-size: 18px; margin: 0 0 12px; }
+.detail-section p.desc { font-size: 14px; line-height: 1.7; color: var(--text); margin: 0; }
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+.portfolio-item {
+    aspect-ratio: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--border);
+}
+.portfolio-item img { width: 100%; height: 100%; object-fit: cover; }
+.muted-note { font-size: 14px; color: var(--text-muted); }
+
+/* ulasan */
+.review-item { padding: 14px 0; border-bottom: 1px solid var(--border); }
+.review-item:last-child { border-bottom: none; }
+.review-top { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px; }
+.review-top strong { font-size: 14px; }
+.review-date { color: var(--text-muted); }
+.review-text { font-size: 14px; margin: 6px 0 0; color: var(--text); }
+
+/* ---------- Kartu penyedia ---------- */
+.provider-card h3 { font-size: 15px; margin: 0 0 16px; }
+.provider-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.avatar-lg {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--blue);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 700;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.avatar-lg img { width: 100%; height: 100%; object-fit: cover; }
+.provider-name { font-weight: 700; font-size: 15px; }
+.provider-sub { font-size: 13px; color: var(--text-muted); }
+.provider-meta { font-size: 13px; color: var(--text-muted); margin-bottom: 6px; }
+.provider-actions { display: flex; gap: 10px; margin-top: 14px; }
+.provider-actions .btn { flex: 1; padding: 10px; font-size: 13px; }
+.provider-card + .card { margin-top: 16px; }
+
+.skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.skill-tag {
+    background: #EFF6FF;
+    color: var(--blue);
+    font-size: 13px;
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
+@media (max-width: 900px) {
+    .detail-top { grid-template-columns: 1fr; }
+    .detail-bottom { grid-template-columns: 1fr; }
+    .gallery-main { height: 260px; }
+}
+@media (max-width: 560px) {
+    .detail-head { flex-direction: column; }
+    .detail-actions { flex-direction: column; }
+    .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+}

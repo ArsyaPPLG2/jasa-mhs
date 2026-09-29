@@ -1,0 +1,188 @@
+/* =====================================================
+   Dashboard & halaman akun (dipakai banyak halaman)
+   ===================================================== */
+
+.page-title { font-size: 24px; margin: 0 0 4px; }
+.page-sub { color: var(--text-muted); font-size: 14px; margin: 0 0 22px; }
+.section-title { font-size: 17px; margin: 28px 0 12px; display: flex; align-items: center; justify-content: space-between; }
+.section-title a { font-size: 13px; color: var(--blue); font-weight: 600; }
+
+/* ---------- Statistik ---------- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+.stat-card .label { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+.stat-card .value { font-size: 26px; font-weight: 700; }
+.stat-card .hint { font-size: 12px; margin-top: 6px; color: var(--text-muted); }
+.hint.up { color: var(--success-text); }
+.hint.down { color: var(--danger-text); }
+
+/* ---------- Daftar pesanan ---------- */
+.order-list { padding: 0; overflow: hidden; }
+.order-row {
+    display: grid;
+    grid-template-columns: 52px 1fr auto auto;
+    gap: 14px;
+    align-items: center;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+}
+.order-row:last-child { border-bottom: none; }
+.order-thumb {
+    width: 52px;
+    height: 52px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--navy), var(--navy-light));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+.order-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.order-title { font-weight: 700; font-size: 14px; }
+.order-sub { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+.order-note { font-size: 12px; color: var(--text); margin-top: 4px; background: var(--bg); padding: 6px 10px; border-radius: 6px; }
+.order-price { font-weight: 700; font-size: 14px; text-align: right; white-space: nowrap; }
+.order-actions {
+    grid-column: 2 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.btn-sm { padding: 7px 14px; font-size: 13px; border-radius: 6px; }
+.btn-danger { background: var(--danger-bg); color: var(--danger-text); }
+.btn-danger:hover { background: #FECACA; }
+.btn-success { background: var(--success-bg); color: var(--success-text); }
+.btn-success:hover { background: #BBF7D0; }
+.inline-form { display: inline; margin: 0; }
+
+.badge-info { background: #DBEAFE; color: #1D4ED8; }
+.badge-muted { background: #E2E8F0; color: #475569; }
+
+.empty-box {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+.empty-box .btn { margin-top: 14px; }
+
+/* ---------- Tabs ---------- */
+.tabs { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+.tabs a {
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    background: var(--white);
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+}
+.tabs a.active { background: var(--blue); color: #fff; border-color: var(--blue); }
+
+/* ---------- Kartu jasa milik sendiri ---------- */
+.my-service {
+    display: grid;
+    grid-template-columns: 64px 1fr auto;
+    gap: 14px;
+    align-items: center;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+}
+.my-service:last-child { border-bottom: none; }
+.my-service .order-thumb { width: 64px; height: 64px; }
+.my-service-actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
+
+/* ---------- Form 2 kolom ---------- */
+.form-card { max-width: 760px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-hint { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+.form-actions { display: flex; gap: 10px; margin-top: 8px; }
+.check-row { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+.check-row input { accent-color: var(--blue); width: 16px; height: 16px; }
+
+.current-images { display: flex; flex-wrap: wrap; gap: 10px; margin: 8px 0; }
+.current-image { width: 96px; font-size: 12px; text-align: center; }
+.current-image img { width: 96px; height: 72px; object-fit: cover; border-radius: 8px; display: block; margin-bottom: 4px; }
+
+/* ---------- Profil ---------- */
+.profile-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 20px; align-items: start; }
+.profile-head { display: flex; gap: 20px; align-items: center; }
+.profile-photo {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: var(--blue);
+    color: #fff;
+    font-size: 44px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.profile-photo img { width: 100%; height: 100%; object-fit: cover; }
+.profile-head h2 { margin: 0 0 4px; font-size: 20px; }
+.profile-actions { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+.info-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.info-table td { padding: 9px 0; vertical-align: top; }
+.info-table td:first-child { color: var(--text-muted); width: 130px; }
+.card h3.card-title { font-size: 16px; margin: 0 0 14px; }
+.card + .card { margin-top: 16px; }
+
+/* ---------- Ulasan & rating ---------- */
+.rating-summary { display: grid; grid-template-columns: 220px 1fr; gap: 16px; }
+.rating-big { text-align: center; }
+.rating-big .num { font-size: 44px; font-weight: 700; }
+.rating-big .num span { color: var(--star); font-size: 34px; }
+.dist-row { display: grid; grid-template-columns: 34px 1fr 42px; gap: 10px; align-items: center; font-size: 13px; margin: 8px 0; }
+.dist-bar { height: 8px; background: var(--border); border-radius: 99px; overflow: hidden; }
+.dist-bar span { display: block; height: 100%; background: var(--blue); border-radius: 99px; }
+.review-card { display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--border); }
+.review-card:last-child { border-bottom: none; }
+.review-avatar {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: var(--navy-light); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; flex-shrink: 0; overflow: hidden;
+}
+.review-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.review-body { flex: 1; min-width: 0; }
+.review-head { display: flex; justify-content: space-between; gap: 10px; font-size: 14px; }
+.review-head .when { color: var(--text-muted); font-size: 12px; }
+.review-service { font-size: 12px; color: var(--text-muted); margin: 2px 0; }
+.review-comment { font-size: 14px; margin: 6px 0 0; }
+
+/* input bintang (1-5): radio tersembunyi, dibalik urutan agar hover menyala ke kiri */
+.star-input { display: inline-flex; flex-direction: row-reverse; gap: 4px; }
+.star-input input { position: absolute; opacity: 0; pointer-events: none; }
+.star-input label { font-size: 34px; color: #CBD5E1; cursor: pointer; line-height: 1; }
+.star-input label:hover,
+.star-input label:hover ~ label,
+.star-input input:checked ~ label { color: var(--star); }
+.star-input input:focus-visible + label { outline: 2px solid var(--blue); border-radius: 4px; }
+
+/* ---------- Tabel sederhana ---------- */
+.table-wrap { overflow-x: auto; }
+.simple-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.simple-table th { text-align: left; font-size: 12px; color: var(--text-muted); font-weight: 600; padding: 10px 14px; border-bottom: 1px solid var(--border); }
+.simple-table td { padding: 12px 14px; border-bottom: 1px solid var(--border); }
+.simple-table tr:last-child td { border-bottom: none; }
+
+@media (max-width: 900px) {
+    .stats-grid { grid-template-columns: 1fr; }
+    .profile-grid { grid-template-columns: 1fr; }
+    .rating-summary { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+    .order-row { grid-template-columns: 52px 1fr; }
+    .order-row .order-price, .order-row .badge { grid-column: 2; justify-self: start; text-align: left; }
+    .my-service { grid-template-columns: 64px 1fr; }
+    .my-service-actions { grid-column: 1 / -1; justify-content: flex-start; }
+    .form-row { grid-template-columns: 1fr; }
+    .profile-head { flex-direction: column; text-align: center; }
+}

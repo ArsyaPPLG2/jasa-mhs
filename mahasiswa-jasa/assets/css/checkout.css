@@ -1,0 +1,69 @@
+/* =====================================================
+   Checkout / Pemesanan
+   ===================================================== */
+.checkout-wrap { max-width: 980px; margin: 0 auto; padding: 28px 24px 48px; }
+
+.stepper { display: flex; align-items: center; gap: 12px; margin-bottom: 26px; }
+.step { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text-muted); }
+.step .dot {
+    width: 30px; height: 30px; border-radius: 50%;
+    background: #E2E8F0; color: var(--text-muted);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 13px;
+}
+.step.active { color: var(--text); font-weight: 600; }
+.step.active .dot { background: var(--blue); color: #fff; }
+.step.done .dot { background: var(--success-text); color: #fff; }
+.step-line { flex: 1; height: 2px; background: var(--border); max-width: 90px; }
+
+.checkout-grid { display: grid; grid-template-columns: 1fr 320px; gap: 22px; align-items: start; }
+
+.co-item { display: flex; gap: 14px; align-items: center; padding-bottom: 16px; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
+.co-thumb {
+    width: 84px; height: 84px; border-radius: 10px; overflow: hidden; flex-shrink: 0;
+    background: linear-gradient(135deg, var(--navy), var(--navy-light));
+    display: flex; align-items: center; justify-content: center; font-size: 32px;
+}
+.co-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.co-item h3 { margin: 0 0 4px; font-size: 16px; }
+.co-item .prov { font-size: 13px; color: var(--text-muted); }
+.co-item .price { font-weight: 700; margin-top: 4px; }
+
+.qty-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; font-size: 14px; }
+.qty { display: inline-flex; align-items: center; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.qty button { width: 36px; height: 36px; border: none; background: var(--white); font-size: 18px; cursor: pointer; }
+.qty button:hover { background: var(--bg); }
+.qty input { width: 48px; text-align: center; border: none; font-size: 14px; font-weight: 600; -moz-appearance: textfield; }
+.qty input::-webkit-outer-spin-button, .qty input::-webkit-inner-spin-button { -webkit-appearance: none; }
+
+.total-line { display: flex; justify-content: space-between; font-weight: 700; padding-top: 14px; border-top: 1px solid var(--border); margin-top: 8px; }
+
+.pay-option {
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 16px; border: 1px solid var(--border); border-radius: 10px;
+    margin-bottom: 10px; cursor: pointer; font-size: 14px;
+}
+.pay-option:has(input:checked) { border-color: var(--blue); background: #EFF6FF; }
+.pay-option input { accent-color: var(--blue); }
+
+.summary-row { display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 12px; gap: 10px; }
+.summary-total { display: flex; justify-content: space-between; font-size: 18px; font-weight: 700; padding: 14px 0; border-top: 1px solid var(--border); margin-top: 6px; }
+.secure-note { text-align: center; font-size: 12px; color: var(--text-muted); margin-top: 12px; }
+
+.pay-box { background: var(--bg); border-radius: 10px; padding: 18px; margin: 14px 0; }
+.pay-box .big { font-size: 18px; font-weight: 700; margin: 4px 0; word-break: break-word; }
+.qris-box {
+    width: 180px; height: 180px; margin: 10px auto;
+    border: 2px dashed var(--border); border-radius: 12px; background: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; color: var(--text-muted); text-align: center; padding: 12px;
+}
+.done-hero { text-align: center; padding: 20px 0 6px; }
+.done-hero .check { font-size: 54px; }
+.done-hero h1 { margin: 8px 0 6px; font-size: 24px; }
+.code-pill { display: inline-block; background: var(--bg); padding: 6px 14px; border-radius: 999px; font-family: monospace; font-weight: 700; letter-spacing: 1px; }
+
+@media (max-width: 800px) {
+    .checkout-grid { grid-template-columns: 1fr; }
+    .step span.txt { display: none; }
+}
